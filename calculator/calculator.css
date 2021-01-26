@@ -1,0 +1,121 @@
+html {
+  padding-top: 3rem;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px repeat(5, 1fr);
+    border-radius: 20%;
+    height: 500px;
+    width: 380px;
+    margin: 0 auto; 
+    background-color: rgb(94, 138, 177);
+    grid-template-areas: 
+            "display display display display"
+            "admin admin admin operator"
+            "number number number operator"
+            "number number number operator"
+            "number number number operator"
+            "number number number operator";
+}
+
+.display {
+    grid-area: display;
+    background-color: rgb(151, 74, 74);
+    border: 1px rgb(196, 183, 183);
+    border-style:solid;
+    border-radius: 20%;
+}
+
+.admin {
+    grid-area: admin;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* background-color: rgb(83, 197, 135); */
+    align-items: center;
+    justify-content: center;
+}
+
+.number{
+    grid-area: number;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    /* background-color: rgb(175, 123, 218); */
+    align-items: center;
+    justify-content: center;
+}
+
+.is-zero {
+    grid-column: span 2;
+}
+
+.operator {
+    grid-area: operator;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    /* color: blue; */
+    /* background-color: rgb(33, 66, 66); */
+    padding: 0;
+    margin: 0;
+}
+
+.button {
+    /* display: block; */
+    width: 100%;
+    /* width: 95px; */
+    height: 100%;
+    border: 1px rgb(196, 183, 183);
+    border-style:solid;
+    border-radius: 20%;
+
+    font-family: 'sans serif';
+    font-size: 18px;
+    margin: 0;
+}
+
+.operator > .button {
+    background-color: rgb(90, 117, 119);
+}
+
+.operator > .button:hover {
+    background-color: rgb(146, 184, 184) 
+}
+
+.admin> .button {
+    background-color: rgb(176, 202, 62);
+}
+
+.admin > .button:hover {
+    background-color: rgb(213, 224, 164);;
+}
+
+.number > .button {
+    background-color: rgb(143, 83, 143);
+}
+
+.number > .button:hover {
+    background-color: rgb(206, 170, 206);;
+} 
+
+.result {
+    font-family: monospace;
+    font-size: 25px;
+    
+    padding-top: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    max-width: 380px; 
+    text-align: end;
+}
